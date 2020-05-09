@@ -1,0 +1,12 @@
+E:\suspe-source\Suspe.LED\Suspe.LED.Service\bin\Release\EQ2008_Dll.dll
+E:\suspe-source\Suspe.LED\Suspe.LED.Service\bin\Release\Suspe.LED.Service.dll
+E:\suspe-source\Suspe.LED\Suspe.LED.Service\bin\Release\Suspe.LED.Service.pdb
+E:\suspe-source\Suspe.LED\Suspe.LED.Service\bin\Release\Dapper.dll
+E:\suspe-source\Suspe.LED\Suspe.LED.Service\bin\Release\log4net.dll
+E:\suspe-source\Suspe.LED\Suspe.LED.Service\bin\Release\Suspe.LED.Model.dll
+E:\suspe-source\Suspe.LED\Suspe.LED.Service\bin\Release\Suspe.LED.Model.pdb
+E:\suspe-source\Suspe.LED\Suspe.LED.Service\bin\Release\Dapper.xml
+E:\suspe-source\Suspe.LED\Suspe.LED.Service\bin\Release\log4net.xml
+E:\suspe-source\Suspe.LED\Suspe.LED.Service\obj\Release\Suspe.LED.Service.csprojResolveAssemblyReference.cache
+E:\suspe-source\Suspe.LED\Suspe.LED.Service\obj\Release\Suspe.LED.Service.dll
+E:\suspe-source\Suspe.LED\Suspe.LED.Service\obj\Release\Suspe.LED.Service.pdb

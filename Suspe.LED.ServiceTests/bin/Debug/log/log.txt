@@ -1,0 +1,231 @@
+2019-07-24 10:49:47,539 [12] ERROR Suspe.LED.Service.LedScreenConfigService [(null)] <(null)> - GetLedScreenConfigList--->异常:System.Data.SqlClient.SqlException (0x80131904): 在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: Named Pipes Provider, error: 40 - 无法打开到 SQL Server 的连接) ---> System.ComponentModel.Win32Exception (0x80004005): 找不到网络路径。
+   在 System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling, SqlAuthenticationProviderManager sqlAuthProviderManager)
+   在 System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   在 System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   在 System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   在 System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   在 System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   在 System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   在 System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   在 System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   在 System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   在 System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   在 System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   在 System.Data.SqlClient.SqlConnection.Open()
+   在 Dapper.SqlMapper.<QueryImpl>d__138`1.MoveNext()
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType)
+   在 SuspeSys.Dao.DapperHelp.Query[U](String sql, Object para) 位置 E:\suspe-source\Suspe.LED\Suspe.LED.Service\DapperHelp.cs:行号 186
+   在 Suspe.LED.Service.LedScreenConfigService.GetLedScreenConfigList() 位置 E:\suspe-source\Suspe.LED\Suspe.LED.Service\LedScreenConfigService.cs:行号 24
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:53,State:0,Class:20
+2019-07-24 11:29:28,181 [12] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 开启服务-->SusLedMain
+2019-07-24 11:29:28,183 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 进入TaskMethod...
+2019-07-24 11:30:28,705 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - DB初始成功...
+2019-07-24 11:30:42,630 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 任务处理开始...
+2019-07-24 11:30:43,240 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 正在获取屏幕配置
+2019-07-24 11:30:43,635 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 屏幕获取成功!数目-->1
+2019-07-24 11:30:43,637 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 更新屏幕配置开始
+2019-07-24 11:30:43,638 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - EQ2008_Dll_Set.ini 路径--->E:\suspe-source\Suspe.LED\Suspe.LED.ServiceTests\bin\DebugEQ2008_Dll_Set.ini
+2019-07-24 11:30:43,646 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - ip地址为空!
+2019-07-24 11:30:43,648 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 更新屏幕配置结束
+2019-07-24 11:30:44,935 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - ledData.RefreshLed() begin...
+2019-07-24 11:31:03,659 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 开始操作屏幕0, IP
+2019-07-24 11:31:04,580 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - tickCount-->57405468
+2019-07-24 11:31:04,647 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 0号屏, 日目标达成率内容为空
+2019-07-24 11:31:19,922 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - ledData.RefreshLed() sucess
+2019-07-24 11:31:19,927 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 任务处理结束...
+2019-07-24 11:31:19,928 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 任务线程休眠1秒,递减数-->4
+2019-07-24 11:31:20,929 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 任务线程休眠1秒,递减数-->3
+2019-07-24 11:31:21,932 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 任务线程休眠1秒,递减数-->2
+2019-07-24 11:31:22,934 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 任务线程休眠1秒,递减数-->1
+2019-07-24 11:31:23,935 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 任务线程休眠1秒,递减数-->0
+2019-07-24 11:31:24,937 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 任务处理开始...
+2019-07-24 11:31:24,938 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 任务已开启
+2019-07-24 11:31:24,939 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - ledData.RefreshLed() begin...
+2019-07-24 11:31:24,940 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 开始操作屏幕0, IP
+2019-07-24 11:31:33,522 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - tickCount-->57430843
+2019-07-24 11:32:20,531 [10] ERROR Suspe.LED.WinService.SusLedMain [(null)] <(null)> - System.ArgumentNullException: 值不能为 null。
+参数名: hostNameOrAddress
+   在 System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   在 System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout)
+   在 Suspe.LED.Service.LedData.LEDIsOnline(ScreenCfg scrn) 位置 E:\suspe-source\Suspe.LED\Suspe.LED.Service\Action\LedData.cs:行号 139
+   在 Suspe.LED.Service.LedData.PageDailyPlan(ScreenCfg scrn, Boolean bNext, Boolean bRefresh) 位置 E:\suspe-source\Suspe.LED\Suspe.LED.Service\Action\LedData.cs:行号 395
+   在 Suspe.LED.Service.LedData.RefreshData(ScreenCfg scrn) 位置 E:\suspe-source\Suspe.LED\Suspe.LED.Service\Action\LedData.cs:行号 261
+   在 Suspe.LED.Service.LedData.RefreshLed() 位置 E:\suspe-source\Suspe.LED\Suspe.LED.Service\Action\LedData.cs:行号 162
+   在 Suspe.LED.WinService.SusLedMain.TaskMethod(Object obj) 位置 E:\suspe-source\Suspe.LED\Suspe.LED.Service\Action\SusLedMain.cs:行号 68
+2019-07-24 11:37:37,523 [12] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 开启服务-->SusLedMain
+2019-07-24 11:37:37,523 [11] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 进入TaskMethod...
+2019-07-24 11:37:40,882 [11] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - DB初始成功...
+2019-07-24 11:37:40,883 [11] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 任务处理开始...
+2019-07-24 11:37:40,893 [11] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 正在获取屏幕配置
+2019-07-24 11:37:41,115 [11] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 屏幕获取成功!数目-->1
+2019-07-24 11:37:41,116 [11] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 更新屏幕配置开始
+2019-07-24 11:37:41,118 [11] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - EQ2008_Dll_Set.ini 路径--->E:\suspe-source\Suspe.LED\Suspe.LED.ServiceTests\bin\DebugEQ2008_Dll_Set.ini
+2019-07-24 11:37:41,127 [11] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - ip地址为空!
+2019-07-24 11:37:41,129 [11] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 更新屏幕配置结束
+2019-07-24 11:37:41,131 [11] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - ledData.RefreshLed() begin...
+2019-07-24 11:37:41,132 [11] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 开始操作屏幕0, IP
+2019-07-24 11:37:43,144 [11] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - tickCount-->57804031
+2019-07-24 11:40:38,500 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 开启服务-->SusLedMain
+2019-07-24 11:40:38,500 [8] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 进入TaskMethod...
+2019-07-24 11:40:41,177 [8] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - DB初始成功...
+2019-07-24 11:40:41,178 [8] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 任务处理开始...
+2019-07-24 11:40:41,191 [8] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 正在获取屏幕配置
+2019-07-24 11:40:41,381 [8] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 屏幕获取成功!数目-->1
+2019-07-24 11:40:41,382 [8] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 更新屏幕配置开始
+2019-07-24 11:40:41,383 [8] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - EQ2008_Dll_Set.ini 路径--->E:\suspe-source\Suspe.LED\Suspe.LED.ServiceTests\bin\DebugEQ2008_Dll_Set.ini
+2019-07-24 11:40:41,392 [8] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - ip地址为空!
+2019-07-24 11:40:41,394 [8] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 更新屏幕配置结束
+2019-07-24 11:40:41,395 [8] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - ledData.RefreshLed() begin...
+2019-07-24 11:40:41,396 [8] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 开始操作屏幕0, IP
+2019-07-24 11:40:45,766 [8] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - tickCount-->57986656
+2019-07-24 11:41:10,717 [8] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - ledData.RefreshLed() sucess
+2019-07-24 11:41:10,719 [8] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 任务处理结束...
+2019-07-24 11:41:10,720 [8] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 任务线程休眠1秒,递减数-->4
+2019-07-24 11:41:11,721 [8] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 任务线程休眠1秒,递减数-->3
+2019-07-24 11:41:12,723 [8] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 任务线程休眠1秒,递减数-->2
+2019-07-24 11:41:13,725 [8] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 任务线程休眠1秒,递减数-->1
+2019-07-24 11:41:14,727 [8] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 任务线程休眠1秒,递减数-->0
+2019-07-24 11:41:15,729 [8] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 任务处理开始...
+2019-07-24 11:41:15,730 [8] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 任务已开启
+2019-07-24 11:41:15,730 [8] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - ledData.RefreshLed() begin...
+2019-07-24 11:41:15,731 [8] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 开始操作屏幕0, IP
+2019-07-24 11:41:15,732 [8] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - tickCount-->58016625
+2019-07-24 11:41:15,802 [8] ERROR Suspe.LED.WinService.SusLedMain [(null)] <(null)> - System.ArgumentNullException: 值不能为 null。
+参数名: hostNameOrAddress
+   在 System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   在 System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout)
+   在 Suspe.LED.Service.LedData.LEDIsOnline(ScreenCfg scrn) 位置 E:\suspe-source\Suspe.LED\Suspe.LED.Service\Action\LedData.cs:行号 139
+   在 Suspe.LED.Service.LedData.PageDailyPlan(ScreenCfg scrn, Boolean bNext, Boolean bRefresh) 位置 E:\suspe-source\Suspe.LED\Suspe.LED.Service\Action\LedData.cs:行号 395
+   在 Suspe.LED.Service.LedData.RefreshData(ScreenCfg scrn) 位置 E:\suspe-source\Suspe.LED\Suspe.LED.Service\Action\LedData.cs:行号 261
+   在 Suspe.LED.Service.LedData.RefreshLed() 位置 E:\suspe-source\Suspe.LED\Suspe.LED.Service\Action\LedData.cs:行号 162
+   在 Suspe.LED.WinService.SusLedMain.TaskMethod(Object obj) 位置 E:\suspe-source\Suspe.LED\Suspe.LED.Service\Action\SusLedMain.cs:行号 68
+2019-07-24 11:41:52,775 [12] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 开启服务-->SusLedMain
+2019-07-24 11:41:52,775 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 进入TaskMethod...
+2019-07-24 11:41:52,803 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - DB初始成功...
+2019-07-24 11:41:52,804 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 任务处理开始...
+2019-07-24 11:41:52,809 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 正在获取屏幕配置
+2019-07-24 11:41:53,013 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 屏幕获取成功!数目-->1
+2019-07-24 11:41:53,014 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 更新屏幕配置开始
+2019-07-24 11:41:53,016 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - EQ2008_Dll_Set.ini 路径--->E:\suspe-source\Suspe.LED\Suspe.LED.ServiceTests\bin\DebugEQ2008_Dll_Set.ini
+2019-07-24 11:41:53,025 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - ip地址为空!
+2019-07-24 11:41:53,027 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 更新屏幕配置结束
+2019-07-24 11:41:53,027 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - ledData.RefreshLed() begin...
+2019-07-24 11:41:53,028 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 开始操作屏幕0, IP
+2019-07-24 11:41:53,030 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - tickCount-->58053921
+2019-07-24 11:41:53,073 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - ledData.RefreshLed() sucess
+2019-07-24 11:41:53,074 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 任务处理结束...
+2019-07-24 11:41:53,075 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 任务线程休眠1秒,递减数-->4
+2019-07-24 11:41:54,077 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 任务线程休眠1秒,递减数-->3
+2019-07-24 11:41:55,079 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 任务线程休眠1秒,递减数-->2
+2019-07-24 11:41:56,081 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 任务线程休眠1秒,递减数-->1
+2019-07-24 11:41:57,083 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 任务线程休眠1秒,递减数-->0
+2019-07-24 11:41:58,085 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 任务处理开始...
+2019-07-24 11:41:58,086 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 任务已开启
+2019-07-24 11:41:58,087 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - ledData.RefreshLed() begin...
+2019-07-24 11:41:58,088 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 开始操作屏幕0, IP
+2019-07-24 11:41:58,089 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - tickCount-->58058984
+2019-07-24 11:48:32,147 [12] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 开启服务-->SusLedMain
+2019-07-24 11:48:32,148 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 进入TaskMethod...
+2019-07-24 11:48:32,195 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - DB初始成功...
+2019-07-24 11:48:32,202 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 任务处理开始...
+2019-07-24 11:48:32,207 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 正在获取屏幕配置
+2019-07-24 11:48:32,457 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 屏幕获取成功!数目-->1
+2019-07-24 11:48:32,458 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 更新屏幕配置开始
+2019-07-24 11:48:32,460 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - EQ2008_Dll_Set.ini 路径--->E:\suspe-source\Suspe.LED\Suspe.LED.ServiceTests\bin\DebugEQ2008_Dll_Set.ini
+2019-07-24 11:48:32,469 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - ip地址为空!
+2019-07-24 11:48:32,471 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 更新屏幕配置结束
+2019-07-24 11:48:32,472 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - ledData.RefreshLed() begin...
+2019-07-24 11:48:32,473 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 开始操作屏幕0, IP
+2019-07-24 11:48:32,474 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - tickCount-->58453359
+2019-07-24 11:48:32,549 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - ledData.RefreshLed() sucess
+2019-07-24 11:48:32,551 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 任务处理结束...
+2019-07-24 11:48:32,552 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 任务线程休眠1秒,递减数-->4
+2019-07-24 11:48:33,554 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 任务线程休眠1秒,递减数-->3
+2019-07-24 11:48:34,556 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 任务线程休眠1秒,递减数-->2
+2019-07-24 11:48:35,558 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 任务线程休眠1秒,递减数-->1
+2019-07-24 11:48:36,560 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 任务线程休眠1秒,递减数-->0
+2019-07-24 11:48:37,562 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 任务处理开始...
+2019-07-24 11:48:37,563 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 任务已开启
+2019-07-24 11:48:37,564 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - ledData.RefreshLed() begin...
+2019-07-24 11:48:37,565 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 开始操作屏幕0, IP
+2019-07-24 11:48:37,566 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - tickCount-->58458453
+2019-07-24 11:54:20,963 [12] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 开启服务-->SusLedMain
+2019-07-24 11:54:20,963 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 进入TaskMethod...
+2019-07-24 11:54:21,011 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - DB初始成功...
+2019-07-24 11:54:21,018 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 任务处理开始...
+2019-07-24 11:54:21,024 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 正在获取屏幕配置
+2019-07-24 11:56:03,451 [12] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 开启服务-->SusLedMain
+2019-07-24 11:56:03,452 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 进入TaskMethod...
+2019-07-24 11:56:03,498 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - DB初始成功...
+2019-07-24 11:56:03,499 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 任务处理开始...
+2019-07-24 11:56:03,505 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 正在获取屏幕配置
+2019-07-24 11:56:07,473 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 屏幕获取成功!数目-->1
+2019-07-24 11:56:10,214 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 更新屏幕配置开始
+2019-07-24 11:56:11,106 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - EQ2008_Dll_Set.ini 路径--->E:\suspe-source\Suspe.LED\Suspe.LED.ServiceTests\bin\DebugEQ2008_Dll_Set.ini
+2019-07-24 11:56:12,997 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 更新屏幕配置结束
+2019-07-24 11:56:15,168 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - ledData.RefreshLed() begin...
+2019-07-24 11:56:15,170 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 开始操作屏幕0, IP 192.168.1.236
+2019-07-24 11:56:15,172 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - tickCount-->58916062
+2019-07-24 11:56:15,912 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - ledData.RefreshLed() sucess
+2019-07-24 11:56:15,914 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 任务处理结束...
+2019-07-24 11:56:15,914 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 任务线程休眠1秒,递减数-->4
+2019-07-24 11:56:16,917 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 任务线程休眠1秒,递减数-->3
+2019-07-24 11:56:17,920 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 任务线程休眠1秒,递减数-->2
+2019-07-24 11:56:18,921 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 任务线程休眠1秒,递减数-->1
+2019-07-24 11:56:19,923 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 任务线程休眠1秒,递减数-->0
+2019-07-24 11:56:20,926 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 任务处理开始...
+2019-07-24 11:56:20,927 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 任务已开启
+2019-07-24 11:56:20,928 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - ledData.RefreshLed() begin...
+2019-07-24 11:56:20,929 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 开始操作屏幕0, IP 192.168.1.236
+2019-07-24 11:56:20,929 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - tickCount-->58921828
+2019-07-24 11:57:37,113 [12] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 开启服务-->SusLedMain
+2019-07-24 11:57:37,113 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 进入TaskMethod...
+2019-07-24 11:57:37,140 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - DB初始成功...
+2019-07-24 11:57:37,141 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 任务处理开始...
+2019-07-24 11:57:37,147 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 正在获取屏幕配置
+2019-07-24 11:57:40,452 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 屏幕获取成功!数目-->1
+2019-07-24 11:57:40,454 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 更新屏幕配置开始
+2019-07-24 11:57:40,455 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - EQ2008_Dll_Set.ini 路径--->E:\suspe-source\Suspe.LED\Suspe.LED.ServiceTests\bin\DebugEQ2008_Dll_Set.ini
+2019-07-24 11:57:40,596 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 更新屏幕配置结束
+2019-07-24 11:57:40,598 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - ledData.RefreshLed() begin...
+2019-07-24 11:57:40,599 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 开始操作屏幕0, IP172.16.193.6
+2019-07-24 11:57:40,601 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - tickCount-->59001500
+2019-07-24 11:57:40,661 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - ledData.RefreshLed() sucess
+2019-07-24 11:57:40,663 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 任务处理结束...
+2019-07-24 11:57:40,664 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 任务线程休眠1秒,递减数-->4
+2019-07-24 11:57:41,666 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 任务线程休眠1秒,递减数-->3
+2019-07-24 11:57:42,669 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 任务线程休眠1秒,递减数-->2
+2019-07-24 11:57:43,671 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 任务线程休眠1秒,递减数-->1
+2019-07-24 11:57:44,674 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 任务线程休眠1秒,递减数-->0
+2019-07-24 11:57:45,676 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 任务处理开始...
+2019-07-24 11:57:45,677 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 任务已开启
+2019-07-24 11:57:45,678 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - ledData.RefreshLed() begin...
+2019-07-24 11:57:45,679 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 开始操作屏幕0, IP172.16.193.6
+2019-07-24 11:57:45,680 [10] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - tickCount-->59006578
+2019-07-24 11:58:49,113 [11] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 开启服务-->SusLedMain
+2019-07-24 11:58:49,114 [9] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 进入TaskMethod...
+2019-07-24 11:58:49,144 [9] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - DB初始成功...
+2019-07-24 11:58:49,146 [9] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 任务处理开始...
+2019-07-24 11:58:49,154 [9] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 正在获取屏幕配置
+2019-07-24 11:58:51,294 [9] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 屏幕获取成功!数目-->1
+2019-07-24 11:58:51,295 [9] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 更新屏幕配置开始
+2019-07-24 11:58:51,297 [9] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - EQ2008_Dll_Set.ini 路径--->E:\suspe-source\Suspe.LED\Suspe.LED.ServiceTests\bin\DebugEQ2008_Dll_Set.ini
+2019-07-24 11:58:51,311 [9] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 更新屏幕配置结束
+2019-07-24 11:58:51,312 [9] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - ledData.RefreshLed() begin...
+2019-07-24 11:58:51,313 [9] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 开始操作屏幕0, IP172.16.193.6
+2019-07-24 11:58:51,315 [9] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - tickCount-->59072203
+2019-07-24 12:00:24,800 [9] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - ledData.RefreshLed() sucess
+2019-07-24 12:00:24,801 [9] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 任务处理结束...
+2019-07-24 12:00:24,802 [9] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 任务线程休眠1秒,递减数-->4
+2019-07-24 12:00:25,803 [9] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 任务线程休眠1秒,递减数-->3
+2019-07-24 12:00:26,805 [9] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 任务线程休眠1秒,递减数-->2
+2019-07-24 12:00:27,808 [9] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 任务线程休眠1秒,递减数-->1
+2019-07-24 12:00:28,810 [9] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 任务线程休眠1秒,递减数-->0
+2019-07-24 12:00:29,812 [9] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 任务处理开始...
+2019-07-24 12:00:29,813 [9] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 任务已开启
+2019-07-24 12:00:29,814 [9] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - ledData.RefreshLed() begin...
+2019-07-24 12:00:29,814 [9] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - 开始操作屏幕0, IP172.16.193.6
+2019-07-24 12:00:29,815 [9] INFO  Suspe.LED.WinService.SusLedMain [(null)] <(null)> - tickCount-->59170703

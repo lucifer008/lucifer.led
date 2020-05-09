@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<log4net>
+  <logger name="CacheInfo">
+    <level value="ALL" />
+    <appender-ref ref="CacheAppender" />
+  </logger>
+<!--NHibernateSQL 执行跟踪-->
+   <logger name="NHibernate" additivity="true">
+       <level value="ERROR"/>
+       <appender-ref ref="DebugAppender" />
+     </logger>
+     <logger name="NHibernate.SQL" additivity="true">
+       <level value="DEBUG"/>
+       <appender-ref ref="DebugAppender" />
+     </logger>
+     
+     <logger name="NHibernate.AdoNet.AbstractBatcher" additivity="true">
+       <level value="DEBUG"/>
+       <appender-ref ref="DebugAppender" />
+     </logger>
+  <appender name="trace" type="log4net.Appender.TraceAppender, log4net">
+    <param name="File" value="log.txt" />
+    <layout type="log4net.Layout.PatternLayout, log4net">
+      <param name="ConversionPattern" value="%d{ABSOLUTE} %-5p %c{1}:%L - %m%n" />
+    </layout>
+  </appender>
+  <appender name="CacheAppender" type="log4net.Appender.RollingFileAppender">
+    <param name="File" value="log/susCache.txt" />
+    <param name="AppendToFile" value="true" />
+    <param name="RollingStyle" value="Date" />
+    <param name="DatePattern" value="yyyy.MM.dd" />
+    <param name="StaticLogFileName" value="true" />
+
+    <layout type="log4net.Layout.PatternLayout,log4net">
+      <param name="ConversionPattern" value="%d [%t] %-5p %c [%x] &lt;%X{auth}&gt; - %m%n" />
+    </layout>
+  </appender>
+  <appender name="rollingFile" type="log4net.Appender.RollingFileAppender,log4net" >
+
+    <param name="File" value="log/log.txt" />
+    <param name="AppendToFile" value="true" />
+    <param name="RollingStyle" value="Date" />
+    <param name="DatePattern" value="yyyy.MM.dd" />
+    <param name="StaticLogFileName" value="true" />
+
+    <layout type="log4net.Layout.PatternLayout,log4net">
+      <param name="ConversionPattern" value="%d [%t] %-5p %c [%x] &lt;%X{auth}&gt; - %m%n" />
+    </layout>
+  </appender>
+
+  <appender name="ConsoleAppender"  type="log4net.Appender.ConsoleAppender" >
+    <layout type="log4net.Layout.PatternLayout">
+      <param name="ConversionPattern"  value="%d [%t] %-5p %c [%x] - %m%n" />
+    </layout>
+
+  </appender>
+  <root>
+    <!--如果只需要看看Sql设置INFO就够了，如果你要调试可以设置为DEBUG或ALL-->
+    <priority value="ALL" />
+    <appender-ref ref="rollingFile" />
+    <appender-ref ref="ConsoleAppender" />
+    <appender-ref ref="trace" />
+  </root>
+
+</log4net>
